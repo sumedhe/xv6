@@ -3,6 +3,6 @@
 #include "user.h"
 
 int main(void) {
-    printf(1, "I was born in %d\n", getyear());
+    printf(1, "Size of my address space is %d\n", sbrk(0));
     exit();
 }
