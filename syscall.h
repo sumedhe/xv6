@@ -20,4 +20,9 @@
 #define SYS_link   19
 #define SYS_mkdir  20
 #define SYS_close  21
+
 #define SYS_getyear 22
+#define SYS_getkstartaddr 23
+#define SYS_getkendaddr 24
+#define SYS_getkvariaddr 25
+#define SYS_getsyscalladdr 26

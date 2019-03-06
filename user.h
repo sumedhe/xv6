@@ -36,4 +36,9 @@ void* memset(void*, int, uint);
 void* malloc(uint);
 void free(void*);
 int atoi(const char*);
+
 int getyear(void);
+int getkstartaddr(void);
+int getkendaddr(void);
+int getkvariaddr(void);
+int getsyscalladdr(void);

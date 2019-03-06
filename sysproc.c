@@ -94,3 +94,25 @@ sys_getyear(void)
 {
   return 1993;
 }
+
+void *
+sys_getkstartaddr(void){
+  return P2V(0);
+}
+
+void *
+sys_getkendaddr(void){
+  return P2V(DEVSPACE-1);
+}
+
+int
+sys_getkvariaddr(void){
+  int x = 1;
+  int y = (uint)&x;
+  return y;
+}
+
+void *
+sys_getsyscalladdr(void){
+  return (void *)sys_fork();
+}
