@@ -121,5 +121,8 @@ int
 int
 sys_setpriority(void)
 {
-  return 1000;
+  int priority;
+  argint(0, &priority);
+  proc->priority = priority;
+  return 1;
 }

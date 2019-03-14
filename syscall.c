@@ -103,6 +103,7 @@ extern int sys_getkstartaddr(void);
 extern int sys_getkendaddr(void);
 extern int sys_getkvariaddr(void);
 extern int sys_getsyscalladdr(void);
+extern int sys_setpriority(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -131,6 +132,7 @@ static int (*syscalls[])(void) = {
 [SYS_getkendaddr] sys_getkendaddr,
 [SYS_getkvariaddr] sys_getkvariaddr,
 [SYS_getsyscalladdr] sys_getsyscalladdr,
+[SYS_setpriority] sys_setpriority,
 };
 
 void

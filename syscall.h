@@ -26,3 +26,4 @@
 #define SYS_getkendaddr 24
 #define SYS_getkvariaddr 25
 #define SYS_getsyscalladdr 26
+#define SYS_setpriority 27

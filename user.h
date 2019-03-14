@@ -42,3 +42,4 @@ int getkstartaddr(void);
 int getkendaddr(void);
 int getkvariaddr(void);
 int getsyscalladdr(void);
+int setpriority(int);
