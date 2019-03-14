@@ -104,7 +104,6 @@ extern int sys_getkendaddr(void);
 extern int sys_getkvariaddr(void);
 extern int sys_getsyscalladdr(void);
 
-
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
 [SYS_exit]    sys_exit,

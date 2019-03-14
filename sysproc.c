@@ -95,24 +95,31 @@ sys_getyear(void)
   return 1993;
 }
 
-void *
+int*
 sys_getkstartaddr(void){
   return P2V(0);
 }
 
-void *
+int*
 sys_getkendaddr(void){
-  return P2V(DEVSPACE-1);
+  return P2V(PHYSTOP);
 }
 
-int
+int*
 sys_getkvariaddr(void){
   int x = 1;
-  int y = (uint)&x;
+  int* y = &x;
   return y;
 }
 
-void *
-sys_getsyscalladdr(void){
-  return (void *)sys_fork();
+int
+(*sys_getsyscalladdr())(void){
+  int (*x)() = *sys_fork;
+  return x;
+}
+
+int
+sys_setpriority(void)
+{
+  return 1000;
 }
