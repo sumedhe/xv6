@@ -10,7 +10,7 @@ char *argv[] = { "sh", 0 };
 int
 main(void)
 {
-  int pid, wpid;
+  int pid, wpid, pid_background;
 
   if(open("console", O_RDWR) < 0){
     mknod("console", 1, 1);
@@ -20,6 +20,17 @@ main(void)
   dup(0);  // stderr
 
   for(;;){
+    pid_background = fork();
+    if (pid_background < 0){
+      printf(1, "background: fork failed\n");
+      exit();
+    }
+    if(pid_background == 0){
+      exec("mybackground", argv);
+      printf(1, "background: exec mybackground failed\n");
+      exit();
+    }
+
     printf(1, "init: starting sh\n");
     pid = fork();
     if(pid < 0){
